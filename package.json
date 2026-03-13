@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.13.6",
     "express": "^5.2.1",
+    "fs": "^0.0.1-security",
     "playwright": "^1.58.2",
     "scraping": "^1.0.0"
   }
