@@ -1,0 +1,17 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fazenda.js",
+  "scripts": {
+    "start": "node fazenda.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "playwright": "^1.58.2",
+    "scraping": "^1.0.0"
+  }
+}
