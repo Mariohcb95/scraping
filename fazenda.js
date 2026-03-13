@@ -14,9 +14,16 @@ app.get("/scrape", async (req, res) => {
   const title = await page.title();
   const content = await page.content();
 
+    const items = await page.$$eval(
+    '.indentacaoNormal:first-of-type a',
+    elements => elements.map(el => ({
+        text: el.innerText,
+        link: el.href
+    }))
+    );
   await browser.close();
 
-  res.json({ title, content });
+  res.json({ items });
 });
 
 app.listen(3000);
