@@ -43,7 +43,9 @@ app.get("/download", async (req, res) => {
         await browser.close();
 
         res.setHeader("Content-Type", "application/pdf");
-        res.setHeader("Content-Disposition", 'attachment; filename="' + req.query.filename ?? "documento" + '.pdf"');
+        const baseFilename = req.query.filename ?? "documento";
+        const finalFilename = baseFilename.endsWith(".pdf") ? baseFilename : baseFilename + ".pdf";
+        res.setHeader("Content-Disposition", 'attachment; filename="' + finalFilename + '"');
         res.send(pdf);
     } catch (error) {
         console.error(error);
